@@ -3,6 +3,7 @@
 // Type definitions for TONE.JS
 // Project: https://github.com/Tonejs/Tone.js
 // Definitions by: Luke Phillips <https://github.com/lukephills>
+//                 Pouya Kary <https://github.com/pmkary>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 //var Tone: {
@@ -408,7 +409,27 @@ declare module Tone {
         dispose(): Tone.Freeverb;
     }
 
-    interface Frequency{}
+    class TimeBase {
+        set ( exprString: string ): TimeBase;
+        add ( val: Time, units?: string ): TimeBase;
+        sub ( val: Time, units?: string ): TimeBase;
+        mult ( val: Time, units?: string ): TimeBase;
+        div ( val: Time, units?: string ): TimeBase;
+        eval ( ): number;
+        dispose: TimeBase;
+    }
+
+    class Frequency extends TimeBase {
+        constructor( val: string | number, units?: string ): TimeBase;
+        toMidi( ): number;
+        toNote( ): string;
+        transpose ( interval: number ): Frequency;
+        harmonize( intervals: number[ ]); Frequency;
+        toSeconds( ): number;
+        toTicks( ): number;
+        midiToFrequency( midi: string ): Frequency;
+        frequencyToMidi( frequency: Frequency ): string;
+    }
 
     var Gate: {
         new(thresh?: number, attackTime?: Tone.Time, releaseTime?: Tone.Time): Tone.Gate;
@@ -1105,5 +1126,4 @@ declare module Tone {
     interface WaveShaper extends Tone.SignalBase {
         curve: number[];
         oversample: string;
-    }
 }
