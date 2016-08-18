@@ -411,10 +411,10 @@ declare module Tone {
 
     class TimeBase {
         set ( exprString: string ): TimeBase;
-        add ( val: Time, units: string ): TimeBase;
-        sub ( val: Time, units: string ): TimeBase;
-        mult ( val: Time, units: string ): TimeBase;
-        div ( val: Time, units: string ): TimeBase;
+        add ( val: Time, units?: string ): TimeBase;
+        sub ( val: Time, units?: string ): TimeBase;
+        mult ( val: Time, units?: string ): TimeBase;
+        div ( val: Time, units?: string ): TimeBase;
         eval ( ): number;
         dispose: TimeBase;
     }
