@@ -424,7 +424,7 @@ declare module Tone {
         toMidi( ): number;
         toNote( ): string;
         transpose ( interval: number ): Frequency;
-        harmonize( intervals: number[ ]); Frequency;
+        harmonize( intervals: number[ ]): Frequency;
         toSeconds( ): number;
         toTicks( ): number;
         midiToFrequency( midi: string ): Frequency;
@@ -1126,4 +1126,5 @@ declare module Tone {
     interface WaveShaper extends Tone.SignalBase {
         curve: number[];
         oversample: string;
+    }
 }
