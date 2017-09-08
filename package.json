@@ -1,0 +1,14 @@
+{
+  "name": "@type/tone",
+  "version": "0.1.0",
+  "description": "Typescript definitions for Tone.js",
+  "main": "Tone.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Tonejs/TypeScript.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tonejs/TypeScript/issues"
+  }
+}
