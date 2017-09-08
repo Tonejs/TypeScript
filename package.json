@@ -1,5 +1,5 @@
 {
-  "name": "@type/tone",
+  "name": "@types/tone",
   "version": "0.1.0",
   "description": "Typescript definitions for Tone.js",
   "main": "Tone.d.ts",
