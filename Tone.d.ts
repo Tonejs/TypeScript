@@ -9,7 +9,8 @@
 //var Tone: {
 //    new(inputs?: number, outputs?: number): Tone;
 //}
-
+export as namespace Tone;
+export = Tone;
 interface Tone {
     new(inputs?: number, outputs?: number): Tone;
     context: AudioContext;
@@ -420,7 +421,7 @@ declare module Tone {
     }
 
     class Frequency extends TimeBase {
-        constructor( val: string | number, units?: string ): TimeBase;
+        constructor( val: string | number, units?: string );
         toMidi( ): number;
         toNote( ): string;
         transpose ( interval: number ): Frequency;
