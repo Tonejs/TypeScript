@@ -2,11 +2,11 @@
 
 NPM:
 
-    npm install --save-dev git://github.com/Tonejs/TypeScript.git
+    npm install -D git://github.com/Tonejs/TypeScript.git
 
 Yarn:
 
-    yarn add --dev git://github.com/Tonejs/TypeScript.git
+    yarn add -D https://github.com/Tonejs/TypeScript.git
 
 # CONTRIBUTORS
 
