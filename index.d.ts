@@ -3421,7 +3421,7 @@ declare namespace Tone {
    * started/stopped and looped as a single unit
    */
   class Part extends Event {
-    constructor(callback: Callback, events: ReadonlyArray<TimeEventPair | TimeEventObject>)
+    constructor(callback: Callback<[Encoding.Time, TimeEventObject]>, events: ReadonlyArray<TimeEventPair | TimeEventObject>)
 
     /**
      * The number of notes in the part
@@ -3470,7 +3470,7 @@ declare namespace Tone {
    * scheduled along the Transport’s timeline
    */
   class Loop extends Tone {
-    constructor(callback: Callback, interval: Encoding.Time)
+    constructor(callback: Callback<[Encoding.Time]>, interval: Encoding.Time)
 
     /**
      * The callback to invoke

@@ -114,7 +114,7 @@ Tone.Transport.loop = true;
 
 // Loops
 synth = new Tone.MembraneSynth().toMaster();
-let loop = new Tone.Loop((time: Tone.Encoding.Time) => {
+let loop = new Tone.Loop(time => {
 	synth.triggerAttackRelease("C1", "8n", time)
 }, "4n");
 
