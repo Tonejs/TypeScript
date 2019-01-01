@@ -1,8 +1,7 @@
 {
   "name": "@types/tone",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typescript definitions for Tone.js",
-  "main": "Tone.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/Tonejs/TypeScript.git"
@@ -10,5 +9,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Tonejs/TypeScript/issues"
+  },
+  "devDependencies": {
+    "tone": "^0.12.80",
+    "typescript": "^3.2.2"
   }
 }
