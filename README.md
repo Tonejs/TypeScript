@@ -1,6 +1,12 @@
-# SEEKING CONTRIBUTORS
+# Installation
 
-I do not personally use TypeScript for any projects. Many definitions are not up to date with the current API. If you use TypeScript and Tone.js, please contribute!
+NPM:
+
+    npm install -D git://github.com/Tonejs/TypeScript.git
+
+Yarn:
+
+    yarn add -D https://github.com/Tonejs/TypeScript.git
 
 # CONTRIBUTORS
 
