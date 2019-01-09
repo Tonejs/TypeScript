@@ -3908,6 +3908,7 @@ declare namespace Tone {
   interface PingPongDelayOptions {
     delayTime?: Encoding.Time;
     maxDelayTime?: Encoding.NormalRange;
+    feedback?: Encoding.NormalRange;
   }
 
   /**
@@ -3921,6 +3922,9 @@ declare namespace Tone {
    * the same interval after the first
    */
   class PingPongDelay extends StereoXFeedbackEffect {
+    constructor(options?: PingPongDelayOptions)
+    constructor(delayTime?: Encoding.Time, feedback?: Encoding.NormalRange)
+
     /**
      * The delay time signal
      */
