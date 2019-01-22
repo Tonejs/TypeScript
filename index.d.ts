@@ -1116,7 +1116,7 @@ declare namespace Tone {
      * The event will fire at the interval starting at the startTime
      * and for the specified duration.
      */
-    scheduleRepeat(callback: Callback, interval: Encoding.Time, startTime: Encoding.TransportTime, duration: Encoding.Time): number;
+    scheduleRepeat(callback: Callback, interval: Encoding.Time, startTime?: Encoding.TransportTime, duration?: Encoding.Time): number;
 
     /**
      * Set the loop start and stop at the same time.
@@ -1642,9 +1642,7 @@ declare namespace Tone {
    * schedule callbacks using the AudioContext time and
    * uses requestAnimationFrame
    */
-  class Draw extends Tone {
-    constructor();
-
+  interface Draw extends Tone {
     /**
      * The amount of time before the scheduled time that the
      * callback can be invoked. Default is half the time of an
@@ -1668,6 +1666,8 @@ declare namespace Tone {
      */
     schedule(callback: Callback, time: Encoding.Time): this;
   }
+
+  const Draw: Draw;
 
   //------------------
   // Component Classes
@@ -2144,8 +2144,8 @@ declare namespace Tone {
 
 
   interface VolumeOptions {
-    volume: Encoding.Decibels;
-    mute: boolean;
+    volume?: Encoding.Decibels;
+    mute?: boolean;
   }
 
   /**
@@ -3908,6 +3908,7 @@ declare namespace Tone {
   interface PingPongDelayOptions {
     delayTime?: Encoding.Time;
     maxDelayTime?: Encoding.NormalRange;
+    feedback?: Encoding.NormalRange;
   }
 
   /**
@@ -3921,6 +3922,9 @@ declare namespace Tone {
    * the same interval after the first
    */
   class PingPongDelay extends StereoXFeedbackEffect {
+    constructor(options?: PingPongDelayOptions)
+    constructor(delayTime?: Encoding.Time, feedback?: Encoding.NormalRange)
+
     /**
      * The delay time signal
      */
