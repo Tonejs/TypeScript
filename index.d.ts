@@ -2144,8 +2144,8 @@ declare namespace Tone {
 
 
   interface VolumeOptions {
-    volume: Encoding.Decibels;
-    mute: boolean;
+    volume?: Encoding.Decibels;
+    mute?: boolean;
   }
 
   /**
