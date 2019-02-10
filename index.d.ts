@@ -1831,7 +1831,7 @@ declare namespace Tone {
     pan: StereoPannerNode["pan"];
   }
 
-  type EnvelopeAttackCurve = 'linear' |
+  type EnvelopeCurve = 'linear' |
     'exponential' |
     'sine' |
     'cosine' |
@@ -1839,8 +1839,6 @@ declare namespace Tone {
     'ripple' |
     'step' |
     number[];
-
-  type EnvelopeReleaseCurve = EnvelopeAttackCurve;
 
   /**
    * Tone.Envelope is an ADSR envelope generator.
@@ -1864,13 +1862,18 @@ declare namespace Tone {
      * Values in the array are evenly subdivided and linearly
      * interpolated over the duration of the attack
      */
-    attackCurve: EnvelopeAttackCurve;
+    attackCurve: EnvelopeCurve;
 
     /**
      * After the attack portion of the envelope, the value will
      * fall over the duration of the decay time to it’s sustain value
      */
     decay: Encoding.Time;
+     
+    /**
+     * The shape of the decay
+     */
+    decayCurve: EnvelopeCurve;
 
     /**
      * After triggerRelease is called, the envelope’s value will
@@ -1881,7 +1884,7 @@ declare namespace Tone {
     /**
      * The shape of the release
      */
-    releaseCurve: EnvelopeReleaseCurve;
+    releaseCurve: EnvelopeCurve;
 
     /**
      * The sustain value is the value which the envelope rests
@@ -2454,9 +2457,12 @@ declare namespace Tone {
 
   interface ADSREnvelopeOptions {
     attack?: Encoding.Time;
+    decayCurve?: EnvelopeCurve;
     decay?: Encoding.Time;
+    decayCurve?: EnvelopeCurve;
     sustain?: Encoding.NormalRange;
     release?: Encoding.Time;
+    releaseCurve?: EnvelopeCurve;
   }
 
   interface FrequencyEnvelopeOptions extends ADSREnvelopeOptions {
