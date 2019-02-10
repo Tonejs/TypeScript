@@ -2457,7 +2457,7 @@ declare namespace Tone {
 
   interface ADSREnvelopeOptions {
     attack?: Encoding.Time;
-    decayCurve?: EnvelopeCurve;
+    attackCurve?: EnvelopeCurve;
     decay?: Encoding.Time;
     decayCurve?: EnvelopeCurve;
     sustain?: Encoding.NormalRange;
