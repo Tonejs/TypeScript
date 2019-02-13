@@ -5421,7 +5421,7 @@ declare namespace Tone {
     /**
      * If getUserMedia is supported by the browser
      */
-    readonly supported: boolean;
+    static readonly supported: boolean;
 
     /**
      * The volume of the output in decibels
