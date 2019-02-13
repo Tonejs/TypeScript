@@ -170,7 +170,7 @@ declare class Tone {
 declare namespace Tone {
   export type Ctor<A extends Array<any> = any[], T = object> = (...args: A) => T;
 
-  export type Callback<A extends any[]= any[]> = (...args: A) => void;
+  export type Callback<A extends any[] = any[]> = (...args: A) => void;
 
   export enum State {
     Started = 'started',
@@ -378,9 +378,9 @@ declare namespace Tone {
    * keyword. Tone.Ticks can be passed into the parameter of
    * any method which takes time as an argument
    */
-  interface Ticks extends TransportTime { }
+  interface Ticks extends TransportTime {}
 
-  interface TicksConstructor extends PrimitiveTypeConstructor<Encoding.Ticks, Ticks> { }
+  interface TicksConstructor extends PrimitiveTypeConstructor<Encoding.Ticks, Ticks> {}
 
   const Ticks: Ticks;
 
@@ -416,7 +416,7 @@ declare namespace Tone {
     valueOf(): number;
   }
 
-  interface TimeBaseConstructor extends PrimitiveTypeConstructor<Encoding.Time, TimeBase> { }
+  interface TimeBaseConstructor extends PrimitiveTypeConstructor<Encoding.Time, TimeBase> {}
 
   const TimeBase: TimeBaseConstructor;
 
@@ -456,7 +456,7 @@ declare namespace Tone {
     toTicks(): Encoding.Ticks;
   }
 
-  interface TimeConstructor extends PrimitiveTypeConstructor<Encoding.Time, Time> { }
+  interface TimeConstructor extends PrimitiveTypeConstructor<Encoding.Time, Time> {}
 
   const Time: TimeConstructor;
 
@@ -466,9 +466,9 @@ declare namespace Tone {
    * evaluating against the AudioContext’s clock, it is
    * evaluated against the Transport’s position
    */
-  interface TransportTime extends Time { }
+  interface TransportTime extends Time {}
 
-  interface TransportTimeConstructor extends PrimitiveTypeConstructor<Encoding.TransportTime, TransportTime> { }
+  interface TransportTimeConstructor extends PrimitiveTypeConstructor<Encoding.TransportTime, TransportTime> {}
 
   const TransportTime: TransportTimeConstructor;
 
@@ -1791,7 +1791,7 @@ declare namespace Tone {
    * signal where both left and right channels have the same value.
    * This can be useful for stereo imaging
    */
-  class Mono extends AudioNode { }
+  class Mono extends AudioNode {}
 
   /**
    * Tone.Meter gets the RMS of an input signal with some averaging
@@ -1869,7 +1869,7 @@ declare namespace Tone {
      * fall over the duration of the decay time to it’s sustain value
      */
     decay: Encoding.Time;
-
+     
     /**
      * The shape of the decay
      */
@@ -2530,7 +2530,7 @@ declare namespace Tone {
     min: number;
   }
 
-  interface AmplitudeEnvelopeOptions extends ADSREnvelopeOptions { }
+  interface AmplitudeEnvelopeOptions extends ADSREnvelopeOptions {}
 
   /**
    * Tone.AmplitudeEnvelope is a Tone.Envelope connected to a
@@ -2540,7 +2540,7 @@ declare namespace Tone {
    */
   class AmplitudeEnvelope extends Envelope {
     constructor(options: AmplitudeEnvelopeOptions)
-    constructor(attack?: Encoding.Time, decay?: Encoding.Time, sustain?: Encoding.NormalRange, release?: Encoding.Time, )
+    constructor(attack?: Encoding.Time, decay?: Encoding.Time, sustain?: Encoding.NormalRange, release?: Encoding.Time,)
   }
 
   type DistanceModel = 'linear' | 'inverse' | 'exponential';
@@ -3597,7 +3597,7 @@ declare namespace Tone {
    * Base class for Stereo effects.
    * Provides effectSendL/R and effectReturnL/R
    */
-  class StereoEffect extends Effect { }
+  class StereoEffect extends Effect {}
 
   interface FeedbackEffectOptions {
     feedback?: Encoding.NormalRange;
@@ -3652,7 +3652,7 @@ declare namespace Tone {
    * Applies a Mid/Side seperation and recombination.
    * This is a base-class for Mid/Side Effects
    */
-  class MidSideEffect extends Effect { }
+  class MidSideEffect extends Effect {}
 
   interface ChorusOptions {
     frequency?: Encoding.Frequency;
@@ -4848,10 +4848,10 @@ declare namespace Tone {
      */
     syncFrequency(): this;
 
-    /**
-    * Unsync the oscillator’s frequency from the Transport
-    */
-    unsyncFrequency(): this;
+      /**
+      * Unsync the oscillator’s frequency from the Transport
+      */
+      unsyncFrequency(): this;
   }
 
   /**
@@ -5421,7 +5421,7 @@ declare namespace Tone {
     /**
      * If getUserMedia is supported by the browser
      */
-    static readonly supported: boolean;
+    readonly supported: boolean;
 
     /**
      * The volume of the output in decibels
@@ -5539,19 +5539,19 @@ declare namespace Tone {
    * Convert an incoming signal between 0, 1 to an equal power
    * gain scale
    */
-  class EqualPowerGain extends SignalBase { }
+  class EqualPowerGain extends SignalBase {}
 
   /**
    * Tone.TransportTimelineSignal extends Tone.Signal, but
    * adds the ability to synchronize the signal to the signal
    * to the Tone.Transport
    */
-  class TransportTimelineSignal<E = Encoding.Default, T = number> extends Signal<E, T> { }
+  class TransportTimelineSignal<E = Encoding.Default, T = number> extends Signal<E, T> {}
 
   /**
    * Maps a NormalRange [0, 1] to an AudioRange [-1, 1]
    */
-  class GainToAudio extends SignalBase { }
+  class GainToAudio extends SignalBase {}
 
   /**
    * Subtract the signal connected to input[1] from the
@@ -5566,7 +5566,7 @@ declare namespace Tone {
   /**
    * Return the absolute value of an incoming signal
    */
-  class Abs extends SignalBase { }
+  class Abs extends SignalBase {}
 
   /**
    * Normalize takes an input min and max and maps it
@@ -5620,7 +5620,7 @@ declare namespace Tone {
    * Tone.Signal with a value of 0 and will not process nodes
    * further down the graph
    */
-  class Zero extends SignalBase { }
+  class Zero extends SignalBase {}
 
   /**
    * Output 1 if the signal is greater than the value,
@@ -5635,7 +5635,7 @@ declare namespace Tone {
    * AudioToGain converts an input in AudioRange [-1,1] to
    * NormalRange [0,1]
    */
-  class AudioToGain extends SignalBase { }
+  class AudioToGain extends SignalBase {}
 
   type OversamplingType = 'none' | '2x' | '4x';
   type WaveShaperMappingFn = (currentPosition: number, arrayPosition: number) => number;
@@ -5670,7 +5670,7 @@ declare namespace Tone {
    * GreaterThanZero outputs 1 when the input is strictly
    * greater than zero
    */
-  class GreaterThanZero extends SignalBase { }
+  class GreaterThanZero extends SignalBase {}
 
   /**
    * Tone.TickSignal extends Tone.Signal, but adds the
@@ -5686,7 +5686,7 @@ declare namespace Tone {
    * Negate the incoming signal. i.e. an input signal of
    * 10 will output -10
    */
-  class Negate extends SignalBase { }
+  class Negate extends SignalBase {}
 
   /**
    * Signal-rate modulo operator. Only works in AudioRange
