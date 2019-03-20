@@ -5329,6 +5329,11 @@ declare namespace Tone {
     grainSize: Encoding.Time;
 
     /**
+     * If the buffer should loop once it’s over
+     */
+    loop: boolean;
+
+    /**
      * If loop is true, the loop will end at this position
      */
     loopEnd: Encoding.Time;
