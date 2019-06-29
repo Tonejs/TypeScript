@@ -5384,7 +5384,7 @@ declare namespace Tone {
      * Returns a promise which resolves with the list
      * of audio input devices available
      */
-    static enumerateDevise(): Promise<ReadonlyArray<MediaDeviceInfo>>
+    static enumerateDevices(): Promise<ReadonlyArray<MediaDeviceInfo>>
 
     /**
      * Returns an identifier for the represented device that
