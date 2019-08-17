@@ -1097,7 +1097,7 @@ declare namespace Tone {
     /**
      * Pause the transport and all sources synced to the transport.
      */
-    pause(time: Encoding.Time): this;
+    pause(time?: Encoding.Time): this;
 
     /**
      * Schedule an event along the timeline.
