@@ -1,3 +1,8 @@
+# NEW - Typescript in Tone.js
+
+I'm in the process of rewriting Tone.js in typescript. If you'd like to contribute to this effort, please check out [this wiki](https://github.com/Tonejs/Tone.js/wiki/Typescripting-Tone.js) article on getting started.
+
+
 # Installation
 
 NPM:
