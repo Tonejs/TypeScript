@@ -136,7 +136,7 @@ declare class Tone {
   static now(): number;
 
   /** The AudioContext */
-  readonly context: Tone.Context;
+  static readonly context: Tone.Context;
 
   /**
    * Recieve the input from the desired channelName to the input
